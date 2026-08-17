@@ -1,0 +1,27 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://ironpinaerial.com/",
+      "https://www.rfc-editor.org/rfc/rfc9727#section-2.1": [
+        {
+          "href": "https://ironpinaerial.com/llms.txt",
+          "type": "text/plain",
+          "title": "IronPin Aerial — LLM-readable site summary"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://ironpinaerial.com/llms.txt",
+          "type": "text/plain",
+          "title": "IronPin Aerial — LLM-readable site summary"
+        }
+      ],
+      "describedby": [
+        {
+          "href": "https://ironpinaerial.com/llms.txt",
+          "type": "text/plain"
+        }
+      ]
+    }
+  ]
+}
