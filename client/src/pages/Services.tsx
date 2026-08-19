@@ -210,7 +210,7 @@ export default function Services() {
       </section>
 
       {/* ── SERVICE 1: INSPECTIONS ── */}
-      <section style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
+      <section id="inspections" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -260,7 +260,7 @@ export default function Services() {
       </section>
 
       {/* ── SERVICE 2: MAPPING ── */}
-      <section style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
+      <section id="mapping" style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -310,7 +310,7 @@ export default function Services() {
       </section>
 
       {/* ── SERVICE 3: PROGRESS DOCUMENTATION ── */}
-      <section style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
+      <section id="construction" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -360,7 +360,7 @@ export default function Services() {
       </section>
 
       {/* ── SERVICE 4: PHOTO & VIDEO ── */}
-      <section style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
+      <section id="photo-video" style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
