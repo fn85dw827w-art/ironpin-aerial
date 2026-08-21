@@ -36,7 +36,7 @@ const AUDIENCES = [
     label: "Community Associations",
     title: "Community Associations & Managers",
     body: [
-      "Annual documentation programs, roof and common-area inspections, and pre-storm baselines your association keeps on file. Reports organized by building and written for the board packet. clear, dated, and ready for the meeting.",
+      "Annual documentation programs, roof and common-area inspections, and pre-storm baselines your association keeps on file. Reports organized by building and written for the board packet. Clear, dated, and ready for the meeting.",
       "We've managed communities and sat through the budget meetings. The deliverable is built for how associations actually work.",
     ],
     image: "/assets/images/community-associations-scan_e8f4a7ab.webp",
@@ -67,7 +67,7 @@ const AUDIENCES = [
     label: "Storm Documentation",
     title: "Pre-Storm & Post-Storm Documentation",
     body: [
-      "A dated visual record of your property before and after an event. organized, timestamped, and ready for whoever needs it. Baselines flown before the season; condition documentation flown fast after the storm.",
+      "A dated visual record of your property before and after an event. Organized, timestamped, and ready for whoever needs it. Baselines flown before the season; condition documentation flown fast after the storm.",
       "We document conditions. We don't handle claims.",
     ],
     image: "/assets/images/resortscan_8116f107.webp",

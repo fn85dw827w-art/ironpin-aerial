@@ -63,7 +63,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Are you licensed and insured?",
-    a: "Yes, we carry a dedicated aviation insurance policy providing $1 million in third-party liability coverage, which fully protects against property damage, bodily injury, and personal or advertising injury claims. Our pilots are vetted and carry FAA Part 107 certifications for sUAS operators.",
+    a: "Yes. IronPin Aerial carries a dedicated aviation liability policy with $1 million in third-party coverage, and every flight is conducted by an FAA Part 107 certificated remote pilot. Certificates of insurance are available on request.",
   },
   {
     q: "Do you work with homeowners?",
@@ -159,6 +159,8 @@ export default function Services() {
   usePageTitle("Services");
   // Inject FAQPage JSON-LD schema into <head> for AI search engines
   useEffect(() => {
+    // The prerendered HTML for /services already contains this schema; don't add a duplicate
+    if (document.getElementById('faq-schema')) return;
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.id = 'faq-schema';
