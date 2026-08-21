@@ -4,15 +4,13 @@ Allow: /
 Sitemap: https://ironpinaerial.com/sitemap.xml
 
 # Content Signals — https://contentsignals.org/
-# ai-train: do not use site content to train AI/ML models
 # search: indexing and retrieval for search results is permitted
-# ai-input: do not use site content as direct input to AI-generated responses without attribution
-Content-Signal: ai-train=no, search=yes, ai-input=no
+# ai-input: content may be used in AI-generated answers, with attribution
+# ai-train: do not use site content to train AI/ML models
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # Agent discovery resources
 # LLM-readable site summary
 # Link: <https://ironpinaerial.com/llms.txt>; rel="service-doc"
 # API catalog (RFC 9727)
 # Link: <https://ironpinaerial.com/.well-known/api-catalog>; rel="api-catalog"
-# Agent skills index
-# Link: <https://ironpinaerial.com/.well-known/agent-skills/index.json>; rel="describedby"
