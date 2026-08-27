@@ -24,3 +24,8 @@
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
+
+/dallas.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: inline; filename="dallas-hobbs.vcf"
+  Cache-Control: public, max-age=3600
