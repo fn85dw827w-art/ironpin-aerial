@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Who We Serve", href: "/who-we-serve" },
-  { href: "https://gallery.ironpinaerialdata.com", label: "Gallery", external: true },
+  { label: "Gallery", href: "https://gallery.ironpinaerialdata.com", external: true },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -60,6 +60,33 @@ export function Header() {
         <nav style={{ display: "flex", alignItems: "center", gap: "0.25rem", marginLeft: "auto" }} className="hidden-mobile">
           {NAV_LINKS.map((link) => {
             const isActive = location === link.href || (link.href !== "/" && location.startsWith(link.href));
+            const desktopStyle = {
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "0.8125rem",
+              fontWeight: 500,
+              letterSpacing: "0.04em",
+              color: isActive ? "#E8500F" : "#D6D9DC",
+              textDecoration: "none",
+              padding: "0.5rem 0.875rem",
+              borderRadius: "2px",
+              transition: "color 150ms ease",
+              whiteSpace: "nowrap",
+            } as const;
+            if (link.external) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={desktopStyle}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#FFFFFF"; }}
+                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#D6D9DC"; }}
+                >
+                  {link.label}
+                </a>
+              );
+            }
             return (
               <Link
                 key={link.href}
@@ -139,6 +166,22 @@ export function Header() {
           <div className="container" style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
             {NAV_LINKS.map((link) => {
               const isActive = location === link.href || (link.href !== "/" && location.startsWith(link.href));
+              const mobileStyle = {
+                fontFamily: "'Inter', sans-serif",
+                fontSize: "1rem",
+                fontWeight: 500,
+                color: isActive ? "#E8500F" : "#D6D9DC",
+                textDecoration: "none",
+                padding: "0.75rem 0",
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+              } as const;
+              if (link.external) {
+                return (
+                  <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" style={mobileStyle}>
+                    {link.label}
+                  </a>
+                );
+              }
               return (
                 <Link
                   key={link.href}
@@ -200,17 +243,25 @@ export function Footer() {
               Pages
             </p>
             <nav style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", color: "#D6D9DC", textDecoration: "none", transition: "color 150ms ease" }}
-                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
-                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#D6D9DC"; }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const footerStyle = { fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", color: "#D6D9DC", textDecoration: "none", transition: "color 150ms ease" } as const;
+                const hover = {
+                  onMouseEnter: (e: React.MouseEvent) => { (e.target as HTMLElement).style.color = "#E8500F"; },
+                  onMouseLeave: (e: React.MouseEvent) => { (e.target as HTMLElement).style.color = "#D6D9DC"; },
+                };
+                if (link.external) {
+                  return (
+                    <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" style={footerStyle} {...hover}>
+                      {link.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link key={link.href} href={link.href} style={footerStyle} {...hover}>
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
 
