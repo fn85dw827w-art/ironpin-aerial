@@ -264,6 +264,12 @@ export default function Home() {
             }}
           >
             {/* Big headline */}
+<img
+  src="/assets/images/ironpin-logo-white-2x.png"
+  alt="IronPin Aerial"
+  width={320} height={93}
+  style={{ display: "block", width: "clamp(200px, 22vw, 320px)", height: "auto", marginBottom: "1.5rem" }}
+/>
             <h1
               style={{
                 fontFamily: "'Oswald', sans-serif",
