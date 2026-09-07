@@ -197,9 +197,13 @@ export default function Home() {
           />
           {/* Desktop: 1920px JPG fallback */}
           <img
-            src="/assets/images/hero-light-desktop_717f31b8.jpg"
+            src="/assets/images/hero-light-desktop_ab86d01c.jpg"
             alt=""
             aria-hidden="true"
+            width={1719}
+            height={915}
+            fetchPriority="high"
+            decoding="async"
             style={{
               position: "absolute",
               inset: 0,
@@ -593,11 +597,18 @@ export default function Home() {
                   backgroundColor: "#141a1f",
                 }}
               >
-                <img
-                  src="/assets/images/about-aerial_c7747871.jpg"
-                  alt="Aerial view of Florida resort complex"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/about-aerial_e0c277a3.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/about-aerial_e0c277a3.jpg"
+                    alt="Aerial view of Florida resort complex"
+                    width={1600}
+                    height={1067}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                </picture>
                 {/* Orange corner accent */}
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />

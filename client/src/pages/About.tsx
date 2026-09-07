@@ -204,8 +204,12 @@ export default function About() {
                 }}
               >
                 <img
-                  src="/assets/images/dallas-headshot-real_9a49ebc4.jpg"
+                  src="/assets/images/dallas-headshot-real_b5d97d10.jpg"
                   alt="Dallas Hobbs. Owner, IronPin Aerial"
+                  width={900}
+                  height={1350}
+                  loading="lazy"
+                  decoding="async"
                   style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }}
                 />
                 {/* Orange corner accent */}

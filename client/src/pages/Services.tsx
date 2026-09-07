@@ -231,7 +231,10 @@ export default function Services() {
                 <img
                   src="/assets/images/construction-progress-scan_d69d8f48.webp"
                   alt="Aerial construction site progress view"
+                  width={1600}
+                  height={1067}
                   loading="lazy"
+                  decoding="async"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
@@ -281,7 +284,10 @@ export default function Services() {
                 <img
                   src="/assets/images/resortscan_8116f107.webp"
                   alt="Aerial orthomosaic mapping view"
+                  width={1536}
+                  height={1024}
                   loading="lazy"
+                  decoding="async"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
@@ -377,7 +383,10 @@ export default function Services() {
                 <img
                   src="/assets/images/rooftopscan_bbb8d628.webp"
                   alt="Aerial roof inspection view"
+                  width={1600}
+                  height={900}
                   loading="lazy"
+                  decoding="async"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 <div style={{ position: "absolute", top: 0, right: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
@@ -401,12 +410,18 @@ export default function Services() {
           >
             <FadeUp delay={120} style={{ order: 2 }}>
               <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#1E252B" }}>
-                <img
-                  src="/assets/images/poststorm-aerial_9093e7ec.jpg"
-                  alt="Aerial post-storm property condition documentation"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/poststorm-aerial_40962611.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/poststorm-aerial_40962611.jpg"
+                    alt="Aerial post-storm property condition documentation"
+                    width={1600}
+                    height={900}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                </picture>
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
               </div>
@@ -451,12 +466,18 @@ export default function Services() {
           >
             <FadeUp delay={120} style={{ order: 2 }}>
               <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#141a1f" }}>
-                <img
-                  src="/assets/images/about-aerial_c7747871.jpg"
-                  alt="Aerial photo and video for commercial properties"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/about-aerial_e0c277a3.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/about-aerial_e0c277a3.jpg"
+                    alt="Aerial photo and video for commercial properties"
+                    width={1600}
+                    height={1067}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                </picture>
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
               </div>

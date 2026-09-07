@@ -131,9 +131,12 @@ export default function Contact() {
           <source media="(max-width: 768px)" srcSet="/assets/images/contact-bg-mobile_f23652a3.jpg" type="image/jpeg" />
           <source srcSet="/assets/images/contact-bg-desktop_5aaf5370.webp" type="image/webp" />
           <img
-            src="/assets/images/contact-bg-desktop_72badfeb.jpg"
+            src="/assets/images/contact-bg-desktop_f03754f7.jpg"
             alt=""
             aria-hidden="true"
+            width={1716}
+            height={917}
+            decoding="async"
             style={{
               position: "absolute",
               inset: 0,

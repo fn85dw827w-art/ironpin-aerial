@@ -39,6 +39,8 @@ const AUDIENCES = [
       "Progress records on your reporting cadence, stockpile and cut/fill numbers, site logistics maps that refresh with every flight.",
     ],
     image: "/assets/images/construction-progress-scan_d69d8f48.webp",
+    imageWidth: 1600,
+    imageHeight: 1067,
     imageAlt: "Aerial view of active construction site",
     accent: "top-right",
   },
@@ -49,6 +51,8 @@ const AUDIENCES = [
       "One shared link per flight date. See the site without a site visit. Draw-request and investor-update ready.",
     ],
     image: "/assets/images/resortscan_8116f107.webp",
+    imageWidth: 1536,
+    imageHeight: 1024,
     imageAlt: "Aerial view of land and site development",
     accent: "bottom-left",
   },
@@ -59,6 +63,8 @@ const AUDIENCES = [
       "Area takeoffs across 50-plus acres in a morning: sod, beds, pavers, edging, clearing limits. A measurement table your estimator can load, and a current image instead of a three-year-old satellite tile.",
     ],
     image: "/assets/images/construction-progress-scan_d69d8f48.webp",
+    imageWidth: 1600,
+    imageHeight: 1067,
     imageAlt: "Aerial view of land clearing and site work",
     accent: "top-right",
   },
@@ -69,12 +75,16 @@ const AUDIENCES = [
       "Roof and facade documentation, pre-season baselines, portfolio media.",
     ],
     image: "/assets/images/property-management-scan_48f04043.webp",
+    imageWidth: 1400,
+    imageHeight: 933,
     imageAlt: "Aerial view of resort and property complex",
     accent: "bottom-left",
   },
   {
     label: "Community Associations",
     title: "Community Associations",
+    imageWidth: 1600,
+    imageHeight: 1067,
     body: [
       "Annual documentation, board-packet inspections, storm baselines. Written for how boards budget.",
     ],
@@ -102,7 +112,7 @@ export default function WhoWeServe() {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: "url('/assets/images/hero-aerial-edited_00778fce.png')",
+            backgroundImage: "url('/assets/images/hero-aerial-edited_445c14e5.webp')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.1,
@@ -180,7 +190,10 @@ export default function WhoWeServe() {
                     <img
                       src={audience.image}
                       alt={audience.imageAlt}
+                      width={audience.imageWidth}
+                      height={audience.imageHeight}
                       loading="lazy"
+                      decoding="async"
                       style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                     />
                     {audience.accent === "top-right" ? (
