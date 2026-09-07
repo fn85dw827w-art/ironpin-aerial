@@ -50,11 +50,10 @@ export function Header() {
         {/* Logo */}
         <Link href="/" style={{ display: "flex", alignItems: "center", flexShrink: 0, textDecoration: "none" }}>
           <img
-            src="/assets/images/ironpin-logo-white_09a57a39.png"
-            alt="IronPin Aerial"
-            width={400}
-            height={225}
-            style={{ height: "40px", width: "auto" }}
+           src="/assets/images/ironpin-logo-white-1x.png"
+srcSet="/assets/images/ironpin-logo-white-2x.png 2x"
+width={166} height={48}
+style={{ height: "48px", width: "auto" }}
           />
         </Link>
 
@@ -230,11 +229,10 @@ export function Footer() {
           {/* Brand */}
           <div>
             <img
-              src="/assets/images/ironpin-logo-white_09a57a39.png"
-              alt="IronPin Aerial"
-              width={400}
-              height={225}
-              style={{ height: "36px", width: "auto", marginBottom: "1rem" }}
+              src="/assets/images/ironpin-logo-white-1x.png"
+srcSet="/assets/images/ironpin-logo-white-2x.png 2x"
+width={138} height={40}
+style={{ height: "40px", width: "auto", marginBottom: "1rem" }}
             />
             <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", color: "#D6D9DC", lineHeight: 1.6, margin: 0 }}>
               Aerial imaging and data collection for Florida's commercial properties.
