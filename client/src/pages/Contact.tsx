@@ -1,7 +1,9 @@
 /**
  * IronPin Aerial — Contact Page
  * Operator's Ledger: dark charcoal, orange accent, Oswald/Inter
- * Quote form: Name, Email, Company, Property Type, Service Needed, Message
+ * Quote form: Name, Email, Company, Property Type, Service Needed, Site Size,
+ * Flight Frequency, Preferred Start (last three shown only for
+ * Construction Progress / Mapping & Measurement / Area Takeoff), Message
  * Submissions: POST to /api/contact → email via Resend → redirect /thank-you
  * On failure: inline error with phone number (407) 887-9889
  */
@@ -70,10 +72,15 @@ export default function Contact() {
     phone: "",
     propertyAddress: "",
     serviceNeeded: "",
+    siteSize: "",
+    frequency: "",
+    preferredStart: "",
     message: "",
     // honeypot — must stay empty
     website: "",
   });
+
+  const showSiteDetails = ["Construction Progress", "Mapping & Measurement", "Area Takeoff (Landscaping)"].includes(formData.serviceNeeded);
 
   const [submitting, setSubmitting] = useState(false);
 
@@ -97,7 +104,13 @@ export default function Contact() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, formStartedAt: formLoadTime.current }),
+        body: JSON.stringify({
+          ...formData,
+          siteSize: showSiteDetails ? formData.siteSize : "",
+          frequency: showSiteDetails ? formData.frequency : "",
+          preferredStart: showSiteDetails ? formData.preferredStart : "",
+          formStartedAt: formLoadTime.current,
+        }),
       });
       if (!response.ok) throw new Error(`Contact request failed: ${response.status}`);
       navigate("/thank-you");
@@ -401,6 +414,60 @@ export default function Contact() {
                     <option value="Not Sure Yet" style={{ backgroundColor: "#141a1f" }}>Not Sure Yet</option>
                   </select>
                 </div>
+
+                {/* Site size, flight frequency, preferred start — construction/mapping/takeoff only */}
+                {showSiteDetails && (
+                  <>
+                    <div>
+                      <label htmlFor="siteSize" style={labelStyle}>Site Size</label>
+                      <input
+                        id="siteSize"
+                        name="siteSize"
+                        type="text"
+                        value={formData.siteSize}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        onFocus={(e) => { Object.assign(e.target.style, focusStyle); }}
+                        onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; }}
+                        placeholder="e.g. 40 acres"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="frequency" style={labelStyle}>Flight Frequency</label>
+                      <select
+                        id="frequency"
+                        name="frequency"
+                        value={formData.frequency}
+                        onChange={handleChange}
+                        style={{ ...inputStyle, appearance: "none", backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23D6D9DC' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 1rem center" }}
+                        onFocus={(e) => { Object.assign(e.target.style, focusStyle); }}
+                        onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; }}
+                      >
+                        <option value="" style={{ backgroundColor: "#141a1f" }}>Select frequency</option>
+                        <option value="One-time" style={{ backgroundColor: "#141a1f" }}>One-time</option>
+                        <option value="Weekly" style={{ backgroundColor: "#141a1f" }}>Weekly</option>
+                        <option value="Bi-weekly" style={{ backgroundColor: "#141a1f" }}>Bi-weekly</option>
+                        <option value="Monthly" style={{ backgroundColor: "#141a1f" }}>Monthly</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label htmlFor="preferredStart" style={labelStyle}>Preferred Start</label>
+                      <input
+                        id="preferredStart"
+                        name="preferredStart"
+                        type="text"
+                        value={formData.preferredStart}
+                        onChange={handleChange}
+                        style={inputStyle}
+                        onFocus={(e) => { Object.assign(e.target.style, focusStyle); }}
+                        onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; }}
+                        placeholder="e.g. late September"
+                      />
+                    </div>
+                  </>
+                )}
 
                 {/* Message */}
                 <div>

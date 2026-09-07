@@ -23,7 +23,7 @@ async function submitContact(request, env) {
     return json({ error: "Invalid request body." }, 400);
   }
 
-  const { name, email, company, phone, propertyAddress, serviceNeeded, message, website, formStartedAt } = payload ?? {};
+  const { name, email, company, phone, propertyAddress, serviceNeeded, siteSize, frequency, preferredStart, message, website, formStartedAt } = payload ?? {};
   if (website) return new Response(null, { status: 204 });
   if (!formStartedAt || Date.now() - Number(formStartedAt) < 3000) return new Response(null, { status: 204 });
   if (!name || !email || !message || !/^\S+@\S+\.\S+$/.test(email)) {
@@ -41,6 +41,9 @@ async function submitContact(request, env) {
     ["Phone", phone],
     ["Property address", propertyAddress],
     ["Service requested", serviceNeeded],
+    ["Site size", siteSize],
+    ["Flight frequency", frequency],
+    ["Preferred start", preferredStart],
     ["Message", message],
   ].filter(([, value]) => value);
   const html = `<h2>New IronPin Aerial quote request</h2><table>${fields.map(([label, value]) => `<tr><th align="left">${escapeHtml(label)}</th><td>${escapeHtml(value).replace(/\n/g, "<br>")}</td></tr>`).join("")}</table>`;
