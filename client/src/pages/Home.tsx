@@ -11,6 +11,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import TrustBar from "@/components/TrustBar";
 
 function useFadeUp(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -431,6 +432,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TrustBar />
 
       {/* ── SECTION 2: SERVICES GRID ── */}
       <section style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
