@@ -46,9 +46,9 @@ Deploy again after adding the secrets, then submit a real test request on the ge
 
 ## Domain cutover after testing
 
-Keep Manus online until the `workers.dev` test succeeds. After that, open the Worker’s **Settings → Domains & Routes**, add `ironpinaerial.com`, and then add `www.ironpinaerial.com`. Cloudflare will guide you through the corresponding routing or DNS configuration because your zone is already on Cloudflare.
+After the `workers.dev` test succeeds, open the Worker's **Settings → Domains & Routes**, add `ironpinaerial.com`, and then add `www.ironpinaerial.com`. Cloudflare will guide you through the corresponding routing or DNS configuration because your zone is already on Cloudflare.
 
-At final cutover, change only the site-hosting records that currently target `ironpinair-uvlwsahz.manus.space`. Keep iCloud+ MX/DKIM, Resend DNS, SPF, DMARC, Google verification, and agent-discovery records unchanged. Keep or recreate the existing redirect rule from `www.ironpinaerial.com/*` to `https://ironpinaerial.com/$1`.
+At final cutover, change only the site-hosting records for `ironpinaerial.com` and `www.ironpinaerial.com`. Keep iCloud+ MX/DKIM, Resend DNS, SPF, DMARC, Google verification, and agent-discovery records unchanged. Keep or recreate the existing redirect rule from `www.ironpinaerial.com/*` to `https://ironpinaerial.com/$1`.
 
 ## Quick verification checklist
 
@@ -63,7 +63,7 @@ At final cutover, change only the site-hosting records that currently target `ir
 
 ## Safe rollback
 
-If a critical issue appears after the domain cutover, restore the existing `@` and `www` website records to the Manus target `ironpinair-uvlwsahz.manus.space`. Do not alter mail or verification records. Keep this source repository and its tagged deployment history as the new portable backup.
+If a critical issue appears after the domain cutover, restore the existing `@` and `www` website records to their prior target. Do not alter mail or verification records. Keep this source repository and its tagged deployment history as the new portable backup.
 
 ## References
 

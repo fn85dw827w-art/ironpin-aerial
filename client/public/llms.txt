@@ -1,10 +1,10 @@
 # IronPin Aerial
 
-IronPin Aerial LLC is a commercial drone imaging and aerial data company based in Orlando, Florida. We provide professional aerial services to businesses, property managers, contractors, resorts, community associations, and government entities across the state of Florida.
+IronPin Aerial LLC is a commercial drone imaging and aerial data company based in Orlando, Florida. We provide professional aerial services to general contractors, developers, landscape and site contractors, commercial property owners and managers, and community associations across the state of Florida.
 
 ## About
 
-IronPin Aerial operates in compliance with FAA regulations for commercial drone flight. Founder Dallas Hobbs holds an FAA Part 107 Remote Pilot Certificate and has completed OSHA 30 training. Core clientele is commercial: associations, property managers, contractors, resorts, and businesses. Residential projects are accepted when the scope fits, such as large properties, acreage, mapping, or construction documentation on private land. Small single-home photo jobs are not offered.
+IronPin Aerial operates in compliance with FAA regulations for commercial drone flight. Founder Dallas Hobbs holds an FAA Part 107 Remote Pilot Certificate and has completed OSHA 30 training. Core clientele is commercial: general contractors, developers, landscape and site contractors, property managers, and community associations. Residential projects are accepted when the scope fits, such as large properties, acreage, mapping, or construction documentation on private land. Small single-home photo jobs are not offered.
 
 Founder: Dallas Hobbs
 Credentials: FAA Part 107 Remote Pilot Certificate, OSHA 30
@@ -13,17 +13,19 @@ Service area: Florida statewide. Central Florida, the coasts, and everywhere bet
 
 ## Services
 
-### Roof & Building Inspections
-Exterior inspections of rooflines, facades, and hard-to-reach areas without ladders, lifts, or disruption. Deliverable: annotated photo report (PDF and share link) with location-tagged images. Turnaround: typically two business days after the flight.
-
-### Mapping & 3D Models
-Measurable, to-scale orthomosaic maps and 3D models built from overlapping aerial images. Deliverables include GeoTIFF, PDF, elevation views, 3D models, and browser-accessible share links. No special software required on the client side. Turnaround: three to five business days depending on site size.
-
 ### Construction Progress Documentation
-Monthly scheduled flights on active construction sites. Each flight produces a current site map and an edited photo set delivered on a consistent schedule. Sold as an ongoing program with consistent flight paths for meaningful month-over-month comparison.
+Weekly, bi-weekly, or monthly flights on an identical flight plan, so each map lines up with the last one. Every visit produces a dated RTK orthomosaic, an edited photo set, and a short flyover clip for the owner update. Files land on a private link the PM, owner, and lender can all open. GeoTIFF and PDF by default, DXF or LAS on request. Turnaround: typically two business days after the flight.
+
+### Mapping, Measurement & 3D
+RTK-referenced orthomosaic maps and 3D models built from overlapping aerial images. Deliverables include GeoTIFF, DXF, KML, CSV, PDF, elevation views, 3D models, and stockpile and cut/fill volumes. Browser-accessible share links, no special software required on the client side. Turnaround: three to five business days depending on site size.
+
+Area takeoffs for landscape and site contractors: fifty acres of sod, beds, pavers, and edging measured in a morning with network RTK instead of a crew with a measuring wheel. Deliverables include polygons as KML or DXF for the estimator, a CSV of square footage by category, and a marked-up PDF for the bid, all from imagery flown this week rather than a satellite tile that may be years old.
+
+### Roof, Facade & Infrastructure Inspections
+Exterior inspections of rooflines, facades, mechanical decks, and hard-to-reach infrastructure without ladders, lifts, or disruption. Deliverable: annotated photo report (PDF and share link) with location-tagged images. Turnaround: typically two business days after the flight.
 
 ### Post-Storm Condition Documentation
-Rapid aerial assessment of properties after weather events. Provides a complete visual record of exterior condition for board packets and repair planning. We document conditions. We don't handle claims.
+Dated pre-season baselines and fast post-event aerial assessment of properties after weather events. Provides a complete visual record of exterior condition for board packets and repair planning. We document conditions. We don't handle claims.
 
 ### Aerial Photo & Video
 Professional aerial photography and videography for marketing, documentation, and presentation purposes.
@@ -43,6 +45,9 @@ Website: https://ironpinaerial.com
 **Do you provide surveys?**
 No. IronPin Aerial provides aerial imaging and visualization. Our maps and models are for documentation and planning, not boundary determination or survey work. When a project needs a licensed surveyor, we are glad to work alongside yours.
 
+**How often do you fly a construction site?**
+Weekly, bi-weekly, or monthly, on the same flight plan every time. Bi-weekly fits earthwork and site prep. Monthly fits vertical construction and finishes. We set the cadence to match your reporting schedule.
+
 **Where do you fly?**
 Based in Orlando and serving properties across Florida. Central Florida, the coasts, and everywhere between.
 
@@ -56,16 +61,15 @@ Florida weather runs the schedule. If conditions are not safe or will not produc
 Yes. IronPin Aerial carries a dedicated aviation liability policy with $1 million in third-party coverage, and every flight is conducted by an FAA Part 107 certificated remote pilot. Certificates of insurance are available on request.
 
 **Do you work with homeowners?**
-Our core work is commercial: associations, property managers, contractors, resorts, and businesses. That said, we take residential projects when the scope fits what we do, such as large properties, acreage, mapping, or construction documentation on private land. If you're not sure whether your project qualifies, give us a call.
+Our core work is commercial: general contractors, developers, landscape and site contractors, property managers, and community associations. That said, we take residential projects when the scope fits what we do, such as large properties, acreage, mapping, or construction documentation on private land. If you're not sure whether your project qualifies, give us a call.
 
 ## Who We Serve
 
-- Commercial real estate owners and property managers
-- HOAs and community associations
-- General contractors and construction managers
-- Resorts and hospitality properties
-- Government and municipal entities
-- Insurance professionals
+- General contractors and project managers
+- Developers, owners, and lenders
+- Landscape and site contractors
+- Commercial property owners and managers
+- Community associations
 
 ## Compliance
 

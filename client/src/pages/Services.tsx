@@ -50,6 +50,10 @@ const FAQ_ITEMS = [
     a: "No. IronPin Aerial provides aerial imaging and visualization. Our maps and models are for documentation and planning, not boundary determination or survey work. When a project needs a licensed surveyor, we're glad to work alongside yours.",
   },
   {
+    q: "How often do you fly a construction site?",
+    a: "Weekly, bi-weekly, or monthly, on the same flight plan every time. Bi-weekly fits earthwork and site prep. Monthly fits vertical construction and finishes. We set the cadence to match your reporting schedule.",
+  },
+  {
     q: "Where do you fly?",
     a: "Based in Orlando and serving properties across Florida. Central Florida, the coasts, and everywhere between.",
   },
@@ -211,8 +215,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* ── SERVICE 1: INSPECTIONS ── */}
-      <section id="inspections" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
+      {/* ── SERVICE 1: CONSTRUCTION PROGRESS ── */}
+      <section id="construction" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -222,7 +226,22 @@ export default function Services() {
               alignItems: "center",
             }}
           >
-            <FadeUp>
+            <FadeUp delay={120} style={{ order: 2 }}>
+              <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#141a1f" }}>
+                <img
+                  src="/assets/images/construction-progress-scan_d69d8f48.webp"
+                  alt="Aerial construction site progress view"
+                  width={1600}
+                  height={1067}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
+                <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
+              </div>
+            </FadeUp>
+            <FadeUp style={{ order: 1 }}>
               <div>
                 <div className="section-label">01</div>
                 <h2
@@ -235,33 +254,21 @@ export default function Services() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Roof & Building Inspections
+                  Construction Progress Documentation
                 </h2>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: "0 0 1rem" }}>
-                  A full exterior look at your property without renting a lift or putting anyone on a ladder. We fly the roofline, facades, and hard-to-reach areas, then deliver an annotated photo report: what we saw, where it is, and the complete image set. as a PDF and a share link.
+                  Weekly, bi-weekly, or monthly flights on an identical flight plan, so each map lines up with the last one. Every visit produces a dated RTK orthomosaic, an edited photo set from the same eight vantage points, and a short flyover clip for the owner update. Files land on a private link your PM, owner, and lender can all open.
                 </p>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: 0 }}>
-                  Built for maintenance planning, insurance files, board packets, and vendor scoping. You'll know what's up there before anyone climbs.
+                  GeoTIFF and PDF by default, DXF or LAS on request. Extended online retention is available as a line item, and the first 60 days are included.
                 </p>
-              </div>
-            </FadeUp>
-            <FadeUp delay={120}>
-              <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#141a1f" }}>
-                <img
-                  src="/assets/images/rooftopscan_bbb8d628.webp"
-                  alt="Aerial roof inspection view"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
-                <div style={{ position: "absolute", top: 0, right: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
-                <div style={{ position: "absolute", top: 0, right: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
               </div>
             </FadeUp>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICE 2: MAPPING ── */}
+      {/* ── SERVICE 2: MAPPING, MEASUREMENT & 3D ── */}
       <section id="mapping" style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
         <div className="container">
           <div
@@ -277,7 +284,10 @@ export default function Services() {
                 <img
                   src="/assets/images/resortscan_8116f107.webp"
                   alt="Aerial orthomosaic mapping view"
+                  width={1536}
+                  height={1024}
                   loading="lazy"
+                  decoding="async"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                 />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
@@ -297,7 +307,7 @@ export default function Services() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Mapping & 3D
+                  Mapping, Measurement & 3D
                 </h2>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: "0 0 1rem" }}>
                   A measurable, to-scale map of your entire site, built from hundreds of overlapping aerial images. Orthomosaic maps, elevation views, 3D models, and stockpile volume measurements. delivered as standard files (GeoTIFF, PDF) plus a web link anyone on your team can open in a browser. No special software on your end.
@@ -308,11 +318,34 @@ export default function Services() {
               </div>
             </FadeUp>
           </div>
+
+          {/* ── SUBSECTION: AREA TAKEOFFS ── */}
+          <div id="takeoffs" style={{ marginTop: "4rem", paddingTop: "4rem", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+            <FadeUp>
+              <div style={{ maxWidth: "760px" }}>
+                <h3
+                  style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontSize: "clamp(1.375rem, 3vw, 1.75rem)",
+                    fontWeight: 600,
+                    color: "#FFFFFF",
+                    margin: "0 0 1.25rem",
+                    letterSpacing: "0.04em",
+                  }}
+                >
+                  Area takeoffs for landscape and site contractors
+                </h3>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: 0 }}>
+                  Fifty acres of sod, beds, pavers, and edging takes a crew a day with a measuring wheel and produces a number nobody trusts. We fly it in a morning with network RTK, build a current orthomosaic at roughly one inch per pixel, and trace every area in GIS. You get the polygons as KML or DXF for your estimator, a CSV of square footage by category, and a marked-up PDF for the bid. If your bid is up against a satellite-based takeoff, ours shows the site as it is this week. A satellite tile shows it as of the last pass, which on new construction can be years old.
+                </p>
+              </div>
+            </FadeUp>
+          </div>
         </div>
       </section>
 
-      {/* ── SERVICE 3: PROGRESS DOCUMENTATION ── */}
-      <section id="construction" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
+      {/* ── SERVICE 3: INSPECTIONS ── */}
+      <section id="inspections" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -322,19 +355,7 @@ export default function Services() {
               alignItems: "center",
             }}
           >
-            <FadeUp delay={120} style={{ order: 2 }}>
-              <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#141a1f" }}>
-                <img
-                  src="/assets/images/construction-progress-scan_d69d8f48.webp"
-                  alt="Aerial construction site progress view"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
-                <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
-                <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
-              </div>
-            </FadeUp>
-            <FadeUp style={{ order: 1 }}>
+            <FadeUp>
               <div>
                 <div className="section-label">03</div>
                 <h2
@@ -347,22 +368,37 @@ export default function Services() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Construction Progress Documentation
+                  Roof, Facade & Infrastructure Inspections
                 </h2>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: "0 0 1rem" }}>
-                  A monthly record of your active site: one scheduled flight, one current site map, one edited photo set. delivered the same way, every month. Owners, lenders, and project teams see progress without a site visit.
+                  A full exterior look at your property without renting a lift or putting anyone on a ladder. We fly the roofline, facades, mechanical decks, and hard-to-reach structure, then deliver an annotated photo report: what we saw, where it is, and the complete image set. as a PDF and a share link.
                 </p>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: 0 }}>
-                  Sold as an ongoing program with consistent flight paths, so month-over-month comparison means something.
+                  Built for maintenance planning, insurance files, board packets, and vendor scoping. You'll know what's up there before anyone climbs.
                 </p>
+              </div>
+            </FadeUp>
+            <FadeUp delay={120}>
+              <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#141a1f" }}>
+                <img
+                  src="/assets/images/rooftopscan_bbb8d628.webp"
+                  alt="Aerial roof inspection view"
+                  width={1600}
+                  height={900}
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                />
+                <div style={{ position: "absolute", top: 0, right: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
+                <div style={{ position: "absolute", top: 0, right: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
               </div>
             </FadeUp>
           </div>
         </div>
       </section>
 
-      {/* ── SERVICE 4: PHOTO & VIDEO ── */}
-      <section id="photo-video" style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
+      {/* —— SERVICE 4: POST-STORM —— */}
+      <section id="post-storm" style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -374,12 +410,18 @@ export default function Services() {
           >
             <FadeUp delay={120} style={{ order: 2 }}>
               <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#1E252B" }}>
-                <img
-                  src="/assets/images/about-aerial_c7747871.jpg"
-                  alt="Aerial photo and video for commercial properties"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/poststorm-aerial_40962611.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/poststorm-aerial_40962611.jpg"
+                    alt="Aerial post-storm property condition documentation"
+                    width={1600}
+                    height={900}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                </picture>
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
               </div>
@@ -397,10 +439,13 @@ export default function Services() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Aerial Photo & Video
+                  Post-Storm Condition Documentation
                 </h2>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: "0 0 1rem" }}>
+                  Dated pre-season baselines and fast post-event condition documentation, organized and timestamped. We fly the property after a storm and deliver a complete visual record of exterior condition: rooflines, facades, common areas, and any visible damage.
+                </p>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: 0 }}>
-                  Marketing stills and edited video for property marketing, resort amenities, and business features. Shot to your spec, edited, delivered through a client gallery your team can download from directly.
+                  We document conditions. We don't handle claims.
                 </p>
               </div>
             </FadeUp>
@@ -408,8 +453,8 @@ export default function Services() {
         </div>
       </section>
 
-      {/* —— SERVICE 5: POST-STORM —— */}
-      <section id="post-storm" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
+      {/* ── SERVICE 5: PHOTO & VIDEO ── */}
+      <section id="photo-video" style={{ backgroundColor: "#1E252B", padding: "5rem 0" }}>
         <div className="container">
           <div
             style={{
@@ -421,12 +466,18 @@ export default function Services() {
           >
             <FadeUp delay={120} style={{ order: 2 }}>
               <div style={{ position: "relative", borderRadius: "2px", overflow: "hidden", aspectRatio: "4/3", backgroundColor: "#141a1f" }}>
-                <img
-                  src="/assets/images/poststorm-aerial_9093e7ec.jpg"
-                  alt="Aerial post-storm property condition documentation"
-                  loading="lazy"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/about-aerial_e0c277a3.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/about-aerial_e0c277a3.jpg"
+                    alt="Aerial photo and video for commercial properties"
+                    width={1600}
+                    height={1067}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                </picture>
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
               </div>
@@ -444,13 +495,10 @@ export default function Services() {
                     letterSpacing: "0.04em",
                   }}
                 >
-                  Post-Storm Condition Documentation
+                  Aerial Photo & Video
                 </h2>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: "0 0 1rem" }}>
-                  Dated pre-season baselines and fast post-event condition documentation, organized and timestamped. We fly the property after a storm and deliver a complete visual record of exterior condition: rooflines, facades, common areas, and any visible damage.
-                </p>
                 <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.9375rem", lineHeight: 1.75, color: "#D6D9DC", margin: 0 }}>
-                  We document conditions. We don't handle claims.
+                  Marketing stills and edited video for property marketing, resort amenities, and business features. Shot to your spec, edited, delivered through a client gallery your team can download from directly.
                 </p>
               </div>
             </FadeUp>

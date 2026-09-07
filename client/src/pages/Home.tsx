@@ -11,6 +11,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import TrustBar from "@/components/TrustBar";
 
 function useFadeUp(ref: React.RefObject<HTMLElement | null>) {
   useEffect(() => {
@@ -38,20 +39,18 @@ function FadeUp({ children, delay = 0, style = {} }: { children: React.ReactNode
 // 5 services matching the official taxonomy
 const HERO_SERVICES = [
   {
-    href: "/services#inspections",
-    label: "Roof & Building\nInspections",
+    href: "/services#construction",
+    label: "Construction\nProgress Docs",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="5" width="30" height="22" rx="2" stroke="white" strokeWidth="1.8" fill="none"/>
-        <path d="M3 12h30" stroke="white" strokeWidth="1.8"/>
-        <path d="M12 20h12M12 24h8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="28" cy="9" r="3" fill="#E8500F"/>
+        <path d="M18 4l14 8v12L18 32 4 24V12L18 4z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
+        <path d="M18 4v28M4 12l14 8 14-8" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
       </svg>
     ),
   },
   {
     href: "/services#mapping",
-    label: "Mapping &\n3D Models",
+    label: "Mapping,\nMeasurement & 3D",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 30V10l6-6h12l6 6v20H6z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
@@ -61,12 +60,14 @@ const HERO_SERVICES = [
     ),
   },
   {
-    href: "/services#construction",
-    label: "Construction\nProgress Docs",
+    href: "/services#inspections",
+    label: "Roof, Facade &\nInfrastructure",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 4l14 8v12L18 32 4 24V12L18 4z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-        <path d="M18 4v28M4 12l14 8 14-8" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
+        <rect x="3" y="5" width="30" height="22" rx="2" stroke="white" strokeWidth="1.8" fill="none"/>
+        <path d="M3 12h30" stroke="white" strokeWidth="1.8"/>
+        <path d="M12 20h12M12 24h8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+        <circle cx="28" cy="9" r="3" fill="#E8500F"/>
       </svg>
     ),
   },
@@ -99,13 +100,13 @@ const SERVICES = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="24" height="24" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
-        <path d="M8 14h12M14 8v12" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="14" cy="14" r="3" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <rect x="3" y="5" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <path d="M8 12h12M8 16h8" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="22" cy="8" r="3" fill="#E8500F"/>
       </svg>
     ),
-    title: "Roof & Building Inspections",
-    body: "Exterior inspections without ladders, lifts, or disruption. Annotated photo reports your board or team can keep on file.",
+    title: "Construction Progress Documentation",
+    body: "Weekly, bi-weekly, or monthly flights on the same flight plan. A dated orthomosaic, photo set, and short flyover after every visit, delivered to one link your owner and lender can open.",
   },
   {
     icon: (
@@ -115,30 +116,19 @@ const SERVICES = [
         <path d="M9 16h10" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
-    title: "Mapping & 3D",
-    body: "Site maps and 3D models you can open in a browser. Measurable, to scale, delivered as files and share links.",
+    title: "Mapping, Measurement & 3D",
+    body: "RTK-referenced orthomosaics, elevation models, 3D models, stockpile and cut/fill volumes, and area takeoffs for sod, beds, pavers, and land clearing. GeoTIFF, DXF, KML, CSV, PDF.",
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="6" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
-        <path d="M8 12h12M8 16h8" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="22" cy="8" r="3" fill="#E8500F"/>
+        <rect x="2" y="2" width="24" height="24" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <path d="M8 14h12M14 8v12" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="14" cy="14" r="3" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
       </svg>
     ),
-    title: "Progress Documentation",
-    body: "Monthly flights on active sites. A current site map and an edited photo set, on schedule, every time.",
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="5" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
-        <path d="M11 9l8 4-8 4V9z" fill="#E8500F"/>
-        <path d="M3 21h22" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Aerial Photo & Video",
-    body: "Marketing stills and edited video for properties, resorts, and businesses.",
+    title: "Roof, Facade & Infrastructure Inspections",
+    body: "Annotated photo reports of rooflines, facades, mechanical decks, and hard-to-reach structure. No lift, no ladder, no shutdown.",
   },
   {
     icon: (
@@ -149,8 +139,19 @@ const SERVICES = [
         <circle cx="14" cy="14.5" r="1.5" fill="#E8500F"/>
       </svg>
     ),
-    title: "Post-Storm Condition Docs",
-    body: "Dated pre-season baselines and fast post-event documentation. We fly after the storm, you have the record.",
+    title: "Post-Storm Condition Documentation",
+    body: "Dated pre-season baselines and fast post-event records of exterior condition. We document. We do not handle claims.",
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="5" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <path d="M11 9l8 4-8 4V9z" fill="#E8500F"/>
+        <path d="M3 21h22" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    title: "Aerial Photo & Video",
+    body: "Stills and edited video for property marketing, resorts, and business features. Delivered through your own download link.",
   },
 ];
 
@@ -159,9 +160,10 @@ export default function Home() {
     <Layout>
       {/* ── SECTION 1: HERO — matches banner sample ── */}
       <section
+        className="hero-section"
         style={{
           position: "relative",
-          minHeight: "100vh",
+          minHeight: "min(100vh, 860px)",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
@@ -195,9 +197,13 @@ export default function Home() {
           />
           {/* Desktop: 1920px JPG fallback */}
           <img
-            src="/assets/images/hero-light-desktop_717f31b8.jpg"
+            src="/assets/images/hero-light-desktop_ab86d01c.jpg"
             alt=""
             aria-hidden="true"
+            width={1719}
+            height={915}
+            fetchPriority="high"
+            decoding="async"
             style={{
               position: "absolute",
               inset: 0,
@@ -212,6 +218,8 @@ export default function Home() {
         <style>{`
           @media (max-width: 768px) {
             img[aria-hidden="true"] { --hero-obj-pos: center center !important; object-position: center center !important; }
+            .hero-section { min-height: 100vh !important; }
+            .hero-service-strip { grid-template-columns: repeat(3, 1fr) !important; }
           }
         `}</style>
         {/* Left-heavy dark overlay — strong left, fades to right */}
@@ -245,30 +253,6 @@ export default function Home() {
             padding: "0",
           }}
         >
-          {/* ── TOP: Large logo — upper left, same width as headline ── */}
-          <div
-            style={{
-              padding: "clamp(4.5rem, 10vh, 7rem) clamp(1.5rem, 5vw, 5rem) 0",
-            }}
-          >
-            {/* The logo width tracks the headline width.
-                The headline uses font-size clamp(2.75rem,9vw,8rem) and spans ~10 chars.
-                On mobile (375px): font ≈ 44px, headline ≈ 310px wide → logo should be ~310px.
-                On desktop (1280px): font ≈ 8rem=128px, headline ≈ 900px wide.
-                Using width:100% on a container that matches the headline's max-width. */}
-            <img
-              src="/assets/images/ironpin-logo-white-tight_d7f9b5d1.png"
-              alt="IronPin Aerial"
-              style={{
-                display: "block",
-                width: "100%",
-                maxWidth: "clamp(300px, 85vw, 900px)",
-                height: "auto",
-                filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.7))",
-              }}
-            />
-          </div>
-
           {/* ── MIDDLE: Headline + tagline + CTA ── */}
           <div
             style={{
@@ -325,7 +309,7 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                Aerial imaging and mapping for Florida's commercial properties, measured from the point that matters.
+                Construction progress, site mapping, and area takeoffs for Florida builders, flown on a schedule and measured from the point that matters.
               </p>
             </div>
 
@@ -343,16 +327,14 @@ export default function Home() {
               backgroundColor: "rgba(20,26,31,0.85)",
               backdropFilter: "blur(8px)",
               padding: "1.25rem clamp(1rem, 4vw, 5rem)",
-              overflowX: "auto",
-              WebkitOverflowScrolling: "touch" as React.CSSProperties["WebkitOverflowScrolling"],
             }}
           >
             <div
+              className="hero-service-strip"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(5, minmax(90px, 1fr))",
+                gridTemplateColumns: "repeat(5, 1fr)",
                 gap: "0.25rem",
-                minWidth: "540px",
               }}
             >
               {HERO_SERVICES.map((svc, i) => (
@@ -379,7 +361,7 @@ export default function Home() {
                     <div
                       style={{
                         fontFamily: "'Oswald', sans-serif",
-                        fontSize: "0.6rem",
+                        fontSize: "0.7rem",
                         fontWeight: 600,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
@@ -423,7 +405,7 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
-              {["Florida Statewide", "Commercial", "Construction", "Community Associations"].map((market, i) => (
+              {["Construction", "Land & Landscape", "Commercial Property", "Central Florida, statewide by arrangement"].map((market, i) => (
                 <span key={market} style={{ display: "flex", alignItems: "center", gap: "0" }}>
                   <span
                     style={{
@@ -455,6 +437,8 @@ export default function Home() {
         </div>
       </section>
 
+      <TrustBar />
+
       {/* ── SECTION 2: SERVICES GRID ── */}
       <section style={{ backgroundColor: "#141a1f", padding: "5rem 0" }}>
         <div className="container">
@@ -470,7 +454,7 @@ export default function Home() {
                 letterSpacing: "0.04em",
               }}
             >
-              Five Services. One Vendor.
+              The same flight, every time.
             </h2>
           </FadeUp>
 
@@ -613,11 +597,18 @@ export default function Home() {
                   backgroundColor: "#141a1f",
                 }}
               >
-                <img
-                  src="/assets/images/about-aerial_c7747871.jpg"
-                  alt="Aerial view of Florida resort complex"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                />
+                <picture>
+                  <source srcSet="/assets/images/about-aerial_e0c277a3.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/about-aerial_e0c277a3.jpg"
+                    alt="Aerial view of Florida resort complex"
+                    width={1600}
+                    height={1067}
+                    loading="lazy"
+                    decoding="async"
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                </picture>
                 {/* Orange corner accent */}
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "4px", height: "60px", backgroundColor: "#E8500F" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, width: "60px", height: "4px", backgroundColor: "#E8500F" }} />
@@ -643,7 +634,7 @@ export default function Home() {
                   letterSpacing: "0.04em",
                 }}
               >
-                Need eyes on a roof, a site, or a whole property?
+                Need eyes on a site, a roof, or fifty acres?
               </h2>
               <p
                 style={{
@@ -656,75 +647,46 @@ export default function Home() {
               >
                 Tell us what you're working with. We'll respond within one business day.
               </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", alignItems: "center", marginBottom: "2.5rem" }}>
+                <a
+                  href="tel:+14078879889"
+                  style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontSize: "1.25rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.04em",
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
+                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#FFFFFF"; }}
+                >
+                  (407) 887-9889
+                </a>
+                <a
+                  href="mailto:info@ironpinaerial.com"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: "0.9rem",
+                    color: "#D6D9DC",
+                    textDecoration: "none",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
+                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#D6D9DC"; }}
+                >
+                  info@ironpinaerial.com
+                </a>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", color: "#D6D9DC", margin: 0, opacity: 0.7 }}>
+                  Based in Orlando. Serving all of Florida.
+                </p>
+              </div>
               <Link href="/contact" className="btn-primary">
                 Request a Quote
               </Link>
             </div>
           </FadeUp>
-        </div>
-      </section>
-
-      {/* ── SECTION 5: CONTACT STRIP ── */}
-      <section style={{ backgroundColor: "#1E252B", padding: "3rem 0", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "2rem",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "2.5rem" }}>
-              <a
-                href="tel:+14078879889"
-                style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  fontSize: "1.25rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.04em",
-                  color: "#FFFFFF",
-                  textDecoration: "none",
-                  transition: "color 150ms ease",
-                }}
-                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
-                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#FFFFFF"; }}
-              >
-                (407) 887-9889
-              </a>
-              <a
-                href="mailto:info@ironpinaerial.com"
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "0.9rem",
-                  color: "#D6D9DC",
-                  textDecoration: "none",
-                  alignSelf: "center",
-                  transition: "color 150ms ease",
-                }}
-                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
-                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#D6D9DC"; }}
-              >
-                info@ironpinaerial.com
-              </a>
-              <p
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "0.875rem",
-                  color: "#D6D9DC",
-                  margin: 0,
-                  alignSelf: "center",
-                  opacity: 0.7,
-                }}
-              >
-                Based in Orlando. Serving all of Florida.
-              </p>
-            </div>
-            <Link href="/contact" className="btn-primary">
-              Request a Quote
-            </Link>
-          </div>
         </div>
       </section>
     </Layout>
