@@ -159,9 +159,10 @@ export default function Home() {
     <Layout>
       {/* ── SECTION 1: HERO — matches banner sample ── */}
       <section
+        className="hero-section"
         style={{
           position: "relative",
-          minHeight: "100vh",
+          minHeight: "min(100vh, 860px)",
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
@@ -212,6 +213,8 @@ export default function Home() {
         <style>{`
           @media (max-width: 768px) {
             img[aria-hidden="true"] { --hero-obj-pos: center center !important; object-position: center center !important; }
+            .hero-section { min-height: 100vh !important; }
+            .hero-service-strip { grid-template-columns: repeat(3, 1fr) !important; }
           }
         `}</style>
         {/* Left-heavy dark overlay — strong left, fades to right */}
@@ -245,30 +248,6 @@ export default function Home() {
             padding: "0",
           }}
         >
-          {/* ── TOP: Large logo — upper left, same width as headline ── */}
-          <div
-            style={{
-              padding: "clamp(4.5rem, 10vh, 7rem) clamp(1.5rem, 5vw, 5rem) 0",
-            }}
-          >
-            {/* The logo width tracks the headline width.
-                The headline uses font-size clamp(2.75rem,9vw,8rem) and spans ~10 chars.
-                On mobile (375px): font ≈ 44px, headline ≈ 310px wide → logo should be ~310px.
-                On desktop (1280px): font ≈ 8rem=128px, headline ≈ 900px wide.
-                Using width:100% on a container that matches the headline's max-width. */}
-            <img
-              src="/assets/images/ironpin-logo-white-tight_d7f9b5d1.png"
-              alt="IronPin Aerial"
-              style={{
-                display: "block",
-                width: "100%",
-                maxWidth: "clamp(300px, 85vw, 900px)",
-                height: "auto",
-                filter: "drop-shadow(0 2px 16px rgba(0,0,0,0.7))",
-              }}
-            />
-          </div>
-
           {/* ── MIDDLE: Headline + tagline + CTA ── */}
           <div
             style={{
@@ -325,7 +304,7 @@ export default function Home() {
                   margin: 0,
                 }}
               >
-                Aerial imaging and mapping for Florida's commercial properties, measured from the point that matters.
+                Construction progress, site mapping, and area takeoffs for Florida builders, flown on a schedule and measured from the point that matters.
               </p>
             </div>
 
@@ -343,16 +322,14 @@ export default function Home() {
               backgroundColor: "rgba(20,26,31,0.85)",
               backdropFilter: "blur(8px)",
               padding: "1.25rem clamp(1rem, 4vw, 5rem)",
-              overflowX: "auto",
-              WebkitOverflowScrolling: "touch" as React.CSSProperties["WebkitOverflowScrolling"],
             }}
           >
             <div
+              className="hero-service-strip"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(5, minmax(90px, 1fr))",
+                gridTemplateColumns: "repeat(5, 1fr)",
                 gap: "0.25rem",
-                minWidth: "540px",
               }}
             >
               {HERO_SERVICES.map((svc, i) => (
@@ -379,7 +356,7 @@ export default function Home() {
                     <div
                       style={{
                         fontFamily: "'Oswald', sans-serif",
-                        fontSize: "0.6rem",
+                        fontSize: "0.7rem",
                         fontWeight: 600,
                         letterSpacing: "0.1em",
                         textTransform: "uppercase",
@@ -423,7 +400,7 @@ export default function Home() {
                 flexWrap: "wrap",
               }}
             >
-              {["Florida Statewide", "Commercial", "Construction", "Community Associations"].map((market, i) => (
+              {["Construction", "Land & Landscape", "Commercial Property", "Central Florida, statewide by arrangement"].map((market, i) => (
                 <span key={market} style={{ display: "flex", alignItems: "center", gap: "0" }}>
                   <span
                     style={{
