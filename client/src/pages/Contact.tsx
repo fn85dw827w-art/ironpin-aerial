@@ -2,7 +2,7 @@
  * IronPin Aerial — Contact Page
  * Operator's Ledger: dark charcoal, orange accent, Oswald/Inter
  * Quote form: Name, Email, Company, Property Type, Service Needed, Message
- * Submissions: POST to /api/trpc/contact.submit → email via Resend → redirect /thank-you
+ * Submissions: POST to /api/contact → email via Resend → redirect /thank-you
  * On failure: inline error with phone number (407) 887-9889
  */
 import { useState, useEffect, useRef } from "react";

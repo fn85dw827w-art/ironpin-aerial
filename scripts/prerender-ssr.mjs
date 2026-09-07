@@ -65,7 +65,7 @@ async function buildSSRBundle() {
   await build({
     configFile: false,
     root: path.join(ROOT, "client"),
-    resolve: { alias: { "@": path.resolve(ROOT, "client", "src"), "@shared": path.resolve(ROOT, "shared"), "@assets": path.resolve(ROOT, "attached_assets") } },
+    resolve: { alias: { "@": path.resolve(ROOT, "client", "src") } },
     plugins: [react({ jsxRuntime: "classic" })],
     build: { ssr: true, outDir: path.resolve(ROOT, "dist", "server"), emptyOutDir: false, rollupOptions: { input: path.resolve(ROOT, "client", "src", "entry-server.tsx"), output: { format: "esm", entryFileNames: "entry-server.js", banner: "import * as __ReactImport from 'react'; const React = __ReactImport.default || __ReactImport;" } } },
     ssr: { noExternal: [/./], external: ["fs", "path", "url", "http", "https", "net", "os", "crypto"] },
