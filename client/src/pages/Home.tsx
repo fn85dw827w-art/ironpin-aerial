@@ -450,7 +450,7 @@ export default function Home() {
                 letterSpacing: "0.04em",
               }}
             >
-              Five Services. One Vendor.
+              The same flight, every time.
             </h2>
           </FadeUp>
 
@@ -623,7 +623,7 @@ export default function Home() {
                   letterSpacing: "0.04em",
                 }}
               >
-                Need eyes on a roof, a site, or a whole property?
+                Need eyes on a site, a roof, or fifty acres?
               </h2>
               <p
                 style={{
@@ -636,75 +636,46 @@ export default function Home() {
               >
                 Tell us what you're working with. We'll respond within one business day.
               </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "2rem", alignItems: "center", marginBottom: "2.5rem" }}>
+                <a
+                  href="tel:+14078879889"
+                  style={{
+                    fontFamily: "'Oswald', sans-serif",
+                    fontSize: "1.25rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.04em",
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
+                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#FFFFFF"; }}
+                >
+                  (407) 887-9889
+                </a>
+                <a
+                  href="mailto:info@ironpinaerial.com"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontSize: "0.9rem",
+                    color: "#D6D9DC",
+                    textDecoration: "none",
+                    transition: "color 150ms ease",
+                  }}
+                  onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
+                  onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#D6D9DC"; }}
+                >
+                  info@ironpinaerial.com
+                </a>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "0.875rem", color: "#D6D9DC", margin: 0, opacity: 0.7 }}>
+                  Based in Orlando. Serving all of Florida.
+                </p>
+              </div>
               <Link href="/contact" className="btn-primary">
                 Request a Quote
               </Link>
             </div>
           </FadeUp>
-        </div>
-      </section>
-
-      {/* ── SECTION 5: CONTACT STRIP ── */}
-      <section style={{ backgroundColor: "#1E252B", padding: "3rem 0", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "2rem",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "2.5rem" }}>
-              <a
-                href="tel:+14078879889"
-                style={{
-                  fontFamily: "'Oswald', sans-serif",
-                  fontSize: "1.25rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.04em",
-                  color: "#FFFFFF",
-                  textDecoration: "none",
-                  transition: "color 150ms ease",
-                }}
-                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
-                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#FFFFFF"; }}
-              >
-                (407) 887-9889
-              </a>
-              <a
-                href="mailto:info@ironpinaerial.com"
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "0.9rem",
-                  color: "#D6D9DC",
-                  textDecoration: "none",
-                  alignSelf: "center",
-                  transition: "color 150ms ease",
-                }}
-                onMouseEnter={(e) => { (e.target as HTMLElement).style.color = "#E8500F"; }}
-                onMouseLeave={(e) => { (e.target as HTMLElement).style.color = "#D6D9DC"; }}
-              >
-                info@ironpinaerial.com
-              </a>
-              <p
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                  fontSize: "0.875rem",
-                  color: "#D6D9DC",
-                  margin: 0,
-                  alignSelf: "center",
-                  opacity: 0.7,
-                }}
-              >
-                Based in Orlando. Serving all of Florida.
-              </p>
-            </div>
-            <Link href="/contact" className="btn-primary">
-              Request a Quote
-            </Link>
-          </div>
         </div>
       </section>
     </Layout>

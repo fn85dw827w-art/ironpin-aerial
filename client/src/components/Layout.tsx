@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Who We Serve", href: "/who-we-serve" },
-  { label: "Gallery", href: "https://gallery.ironpinaerialdata.com", external: true },
+  { label: "Work", href: "https://gallery.ironpinaerialdata.com", external: true },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
