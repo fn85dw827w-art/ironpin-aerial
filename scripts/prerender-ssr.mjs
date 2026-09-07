@@ -24,6 +24,7 @@ const FAQ_SCHEMA = {
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Do you provide surveys?", "acceptedAnswer": { "@type": "Answer", "text": "No. IronPin Aerial provides aerial imaging and visualization. Our maps and models are for documentation and planning, not boundary determination or survey work. When a project needs a licensed surveyor, we're glad to work alongside yours." } },
+    { "@type": "Question", "name": "How often do you fly a construction site?", "acceptedAnswer": { "@type": "Answer", "text": "Weekly, bi-weekly, or monthly, on the same flight plan every time. Bi-weekly fits earthwork and site prep. Monthly fits vertical construction and finishes. We set the cadence to match your reporting schedule." } },
     { "@type": "Question", "name": "Where do you fly?", "acceptedAnswer": { "@type": "Answer", "text": "Based in Orlando and serving properties across Florida. Central Florida, the coasts, and everywhere between." } },
     { "@type": "Question", "name": "How fast are deliverables?", "acceptedAnswer": { "@type": "Answer", "text": "Photo reports typically arrive within two business days of the flight. Maps and 3D models take three to five, depending on site size. If you need it faster, ask when you request the quote." } },
     { "@type": "Question", "name": "What about weather?", "acceptedAnswer": { "@type": "Answer", "text": "Florida weather runs the schedule. If conditions aren't safe or won't produce usable data, we don't fly. Re-flights due to weather are at no charge." } },
@@ -35,11 +36,11 @@ const FAQ_SCHEMA = {
 const FAQ_SCHEMA_TAG = `<script type="application/ld+json" id="faq-schema">${JSON.stringify(FAQ_SCHEMA)}</script>`;
 
 const ROUTES = [
-  { path: "/", outDir: DIST_PUBLIC, title: "IronPin Aerial | Commercial Drone Services Across Florida", description: "FAA Part 107 commercial drone services for Florida properties: inspections, aerial mapping, construction progress documentation, post-storm condition records, and aerial media.", extraHead: "" },
-  { path: "/services", outDir: path.join(DIST_PUBLIC, "services"), title: "Commercial Drone Services in Florida | IronPin Aerial", description: "Explore roof inspections, aerial mapping and 3D models, construction progress documentation, post-storm condition records, and aerial media for Florida properties.", extraHead: FAQ_SCHEMA_TAG },
-  { path: "/who-we-serve", outDir: path.join(DIST_PUBLIC, "who-we-serve"), title: "Drone Services for Property Teams | IronPin Aerial", description: "Aerial documentation and mapping for community associations, property managers, contractors, developers, resorts, and insurance professionals across Florida.", extraHead: "" },
+  { path: "/", outDir: DIST_PUBLIC, title: "IronPin Aerial | Commercial Drone Services Across Florida", description: "FAA Part 107 commercial drone services for Florida builders: construction progress documentation, aerial mapping and area takeoffs, roof and facade inspections, post-storm condition records, and aerial media.", extraHead: "" },
+  { path: "/services", outDir: path.join(DIST_PUBLIC, "services"), title: "Commercial Drone Services in Florida | IronPin Aerial", description: "Explore construction progress documentation, aerial mapping and area takeoffs, roof and facade inspections, post-storm condition records, and aerial media for Florida properties.", extraHead: FAQ_SCHEMA_TAG },
+  { path: "/who-we-serve", outDir: path.join(DIST_PUBLIC, "who-we-serve"), title: "Drone Services for Project Teams | IronPin Aerial", description: "Aerial documentation and mapping for general contractors, developers, landscape and site contractors, commercial property owners and managers, and community associations across Florida.", extraHead: "" },
   { path: "/about", outDir: path.join(DIST_PUBLIC, "about"), title: "About IronPin Aerial | FAA Part 107 Florida Drone Operator", description: "Meet IronPin Aerial, an Orlando-based FAA Part 107 commercial drone operator with OSHA 30 training serving properties across Florida.", extraHead: "" },
-  { path: "/contact", outDir: path.join(DIST_PUBLIC, "contact"), title: "Request a Commercial Drone Quote | IronPin Aerial", description: "Request a quote for aerial inspections, mapping, construction progress documentation, post-storm records, or aerial media anywhere in Florida.", extraHead: "" },
+  { path: "/contact", outDir: path.join(DIST_PUBLIC, "contact"), title: "Request a Commercial Drone Quote | IronPin Aerial", description: "Request a quote for construction progress documentation, mapping and area takeoffs, inspections, post-storm records, or aerial media anywhere in Florida.", extraHead: "" },
 ];
 
 function replaceTag(html, pattern, replacement) {

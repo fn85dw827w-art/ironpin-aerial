@@ -1,7 +1,7 @@
 /**
  * IronPin Aerial — Who We Serve Page
  * Operator's Ledger: dark charcoal, orange accent, Oswald/Inter
- * Sections: Mini Hero, 4 audience sections, CTA
+ * Sections: Mini Hero, 5 audience sections, CTA
  */
 import { useEffect, useRef } from "react";
 import { usePageTitle } from "@/hooks/usePageTitle";
@@ -33,46 +33,54 @@ function FadeUp({ children, delay = 0, style = {} }: { children: React.ReactNode
 
 const AUDIENCES = [
   {
-    label: "Community Associations",
-    title: "Community Associations & Managers",
+    label: "Contractors & PMs",
+    title: "General Contractors & Project Managers",
     body: [
-      "Annual documentation programs, roof and common-area inspections, and pre-storm baselines your association keeps on file. Reports organized by building and written for the board packet. Clear, dated, and ready for the meeting.",
-      "We've managed communities and sat through the budget meetings. The deliverable is built for how associations actually work.",
-    ],
-    image: "/assets/images/community-associations-scan_e8f4a7ab.webp",
-    imageAlt: "Aerial view of community association complex",
-    accent: "top-right",
-  },
-  {
-    label: "Property Management",
-    title: "Property Managers & Resorts",
-    body: [
-      "Portfolio roof programs, capital project documentation, and marketing media across multiple properties. One vendor, consistent deliverables, scheduled around your operation.",
-    ],
-    image: "/assets/images/property-management-scan_48f04043.webp",
-    imageAlt: "Aerial view of resort and property complex",
-    accent: "bottom-left",
-  },
-  {
-    label: "Construction",
-    title: "Contractors & Developers",
-    body: [
-      "Monthly progress mapping, stockpile volumetrics, and site condition documentation. Consistent flight paths, measurable maps, and files your project software can actually use.",
+      "Progress records on your reporting cadence, stockpile and cut/fill numbers, site logistics maps that refresh with every flight.",
     ],
     image: "/assets/images/construction-progress-scan_d69d8f48.webp",
     imageAlt: "Aerial view of active construction site",
     accent: "top-right",
   },
   {
-    label: "Storm Documentation",
-    title: "Pre-Storm & Post-Storm Documentation",
+    label: "Developers & Lenders",
+    title: "Developers, Owners & Lenders",
     body: [
-      "A dated visual record of your property before and after an event. Organized, timestamped, and ready for whoever needs it. Baselines flown before the season; condition documentation flown fast after the storm.",
-      "We document conditions. We don't handle claims.",
+      "One shared link per flight date. See the site without a site visit. Draw-request and investor-update ready.",
     ],
     image: "/assets/images/resortscan_8116f107.webp",
-    imageAlt: "Aerial property documentation view",
+    imageAlt: "Aerial view of land and site development",
     accent: "bottom-left",
+  },
+  {
+    label: "Landscape & Site",
+    title: "Landscape & Site Contractors",
+    body: [
+      "Area takeoffs across 50-plus acres in a morning: sod, beds, pavers, edging, clearing limits. A measurement table your estimator can load, and a current image instead of a three-year-old satellite tile.",
+    ],
+    image: "/assets/images/construction-progress-scan_d69d8f48.webp",
+    imageAlt: "Aerial view of land clearing and site work",
+    accent: "top-right",
+  },
+  {
+    label: "Property Owners",
+    title: "Commercial Property Owners & Managers",
+    body: [
+      "Roof and facade documentation, pre-season baselines, portfolio media.",
+    ],
+    image: "/assets/images/property-management-scan_48f04043.webp",
+    imageAlt: "Aerial view of resort and property complex",
+    accent: "bottom-left",
+  },
+  {
+    label: "Community Associations",
+    title: "Community Associations",
+    body: [
+      "Annual documentation, board-packet inspections, storm baselines. Written for how boards budget.",
+    ],
+    image: "/assets/images/community-associations-scan_e8f4a7ab.webp",
+    imageAlt: "Aerial view of community association complex",
+    accent: "top-right",
   },
 ];
 
@@ -156,11 +164,8 @@ export default function WhoWeServe() {
                           fontFamily: "'Inter', sans-serif",
                           fontSize: "0.9375rem",
                           lineHeight: 1.75,
-                          color: pi === audience.body.length - 1 && para === "We document conditions. We don't handle claims."
-                            ? "#D6D9DC"
-                            : "#D6D9DC",
+                          color: "#D6D9DC",
                           margin: pi < audience.body.length - 1 ? "0 0 1rem" : 0,
-                          fontStyle: para === "We document conditions. We don't handle claims." ? "italic" : "normal",
                         }}
                       >
                         {para}

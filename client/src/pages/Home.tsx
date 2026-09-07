@@ -38,20 +38,18 @@ function FadeUp({ children, delay = 0, style = {} }: { children: React.ReactNode
 // 5 services matching the official taxonomy
 const HERO_SERVICES = [
   {
-    href: "/services#inspections",
-    label: "Roof & Building\nInspections",
+    href: "/services#construction",
+    label: "Construction\nProgress Docs",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="5" width="30" height="22" rx="2" stroke="white" strokeWidth="1.8" fill="none"/>
-        <path d="M3 12h30" stroke="white" strokeWidth="1.8"/>
-        <path d="M12 20h12M12 24h8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
-        <circle cx="28" cy="9" r="3" fill="#E8500F"/>
+        <path d="M18 4l14 8v12L18 32 4 24V12L18 4z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
+        <path d="M18 4v28M4 12l14 8 14-8" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
       </svg>
     ),
   },
   {
     href: "/services#mapping",
-    label: "Mapping &\n3D Models",
+    label: "Mapping,\nMeasurement & 3D",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6 30V10l6-6h12l6 6v20H6z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
@@ -61,12 +59,14 @@ const HERO_SERVICES = [
     ),
   },
   {
-    href: "/services#construction",
-    label: "Construction\nProgress Docs",
+    href: "/services#inspections",
+    label: "Roof, Facade &\nInfrastructure",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 4l14 8v12L18 32 4 24V12L18 4z" stroke="white" strokeWidth="1.8" strokeLinejoin="round" fill="none"/>
-        <path d="M18 4v28M4 12l14 8 14-8" stroke="white" strokeWidth="1.8" strokeLinejoin="round"/>
+        <rect x="3" y="5" width="30" height="22" rx="2" stroke="white" strokeWidth="1.8" fill="none"/>
+        <path d="M3 12h30" stroke="white" strokeWidth="1.8"/>
+        <path d="M12 20h12M12 24h8" stroke="white" strokeWidth="1.8" strokeLinecap="round"/>
+        <circle cx="28" cy="9" r="3" fill="#E8500F"/>
       </svg>
     ),
   },
@@ -99,13 +99,13 @@ const SERVICES = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="2" width="24" height="24" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
-        <path d="M8 14h12M14 8v12" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="14" cy="14" r="3" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <rect x="3" y="5" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <path d="M8 12h12M8 16h8" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="22" cy="8" r="3" fill="#E8500F"/>
       </svg>
     ),
-    title: "Roof & Building Inspections",
-    body: "Exterior inspections without ladders, lifts, or disruption. Annotated photo reports your board or team can keep on file.",
+    title: "Construction Progress Documentation",
+    body: "Weekly, bi-weekly, or monthly flights on the same flight plan. A dated orthomosaic, photo set, and short flyover after every visit, delivered to one link your owner and lender can open.",
   },
   {
     icon: (
@@ -115,30 +115,19 @@ const SERVICES = [
         <path d="M9 16h10" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
       </svg>
     ),
-    title: "Mapping & 3D",
-    body: "Site maps and 3D models you can open in a browser. Measurable, to scale, delivered as files and share links.",
+    title: "Mapping, Measurement & 3D",
+    body: "RTK-referenced orthomosaics, elevation models, 3D models, stockpile and cut/fill volumes, and area takeoffs for sod, beds, pavers, and land clearing. GeoTIFF, DXF, KML, CSV, PDF.",
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="6" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
-        <path d="M8 12h12M8 16h8" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
-        <circle cx="22" cy="8" r="3" fill="#E8500F"/>
+        <rect x="2" y="2" width="24" height="24" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <path d="M8 14h12M14 8v12" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="14" cy="14" r="3" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
       </svg>
     ),
-    title: "Progress Documentation",
-    body: "Monthly flights on active sites. A current site map and an edited photo set, on schedule, every time.",
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="3" y="5" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
-        <path d="M11 9l8 4-8 4V9z" fill="#E8500F"/>
-        <path d="M3 21h22" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
-    ),
-    title: "Aerial Photo & Video",
-    body: "Marketing stills and edited video for properties, resorts, and businesses.",
+    title: "Roof, Facade & Infrastructure Inspections",
+    body: "Annotated photo reports of rooflines, facades, mechanical decks, and hard-to-reach structure. No lift, no ladder, no shutdown.",
   },
   {
     icon: (
@@ -149,8 +138,19 @@ const SERVICES = [
         <circle cx="14" cy="14.5" r="1.5" fill="#E8500F"/>
       </svg>
     ),
-    title: "Post-Storm Condition Docs",
-    body: "Dated pre-season baselines and fast post-event documentation. We fly after the storm, you have the record.",
+    title: "Post-Storm Condition Documentation",
+    body: "Dated pre-season baselines and fast post-event records of exterior condition. We document. We do not handle claims.",
+  },
+  {
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="5" width="22" height="16" rx="2" stroke="#E8500F" strokeWidth="1.5" fill="none"/>
+        <path d="M11 9l8 4-8 4V9z" fill="#E8500F"/>
+        <path d="M3 21h22" stroke="#E8500F" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
+    ),
+    title: "Aerial Photo & Video",
+    body: "Stills and edited video for property marketing, resorts, and business features. Delivered through your own download link.",
   },
 ];
 

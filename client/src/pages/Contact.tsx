@@ -389,11 +389,12 @@ export default function Contact() {
                     onBlur={(e) => { e.target.style.borderColor = "rgba(255,255,255,0.12)"; }}
                   >
                     <option value="" style={{ backgroundColor: "#141a1f" }}>Select service</option>
-                    <option value="Inspections" style={{ backgroundColor: "#141a1f" }}>Inspections</option>
-                    <option value="Mapping & 3D" style={{ backgroundColor: "#141a1f" }}>Mapping & 3D</option>
-                    <option value="Progress Documentation" style={{ backgroundColor: "#141a1f" }}>Progress Documentation</option>
+                    <option value="Construction Progress" style={{ backgroundColor: "#141a1f" }}>Construction Progress</option>
+                    <option value="Mapping & Measurement" style={{ backgroundColor: "#141a1f" }}>Mapping & Measurement</option>
+                    <option value="Area Takeoff (Landscaping)" style={{ backgroundColor: "#141a1f" }}>Area Takeoff (Landscaping)</option>
+                    <option value="Inspection" style={{ backgroundColor: "#141a1f" }}>Inspection</option>
+                    <option value="Post-Storm Documentation" style={{ backgroundColor: "#141a1f" }}>Post-Storm Documentation</option>
                     <option value="Photo & Video" style={{ backgroundColor: "#141a1f" }}>Photo & Video</option>
-                    <option value="Post-Storm Condition Docs" style={{ backgroundColor: "#141a1f" }}>Post-Storm Condition Docs</option>
                     <option value="Not Sure Yet" style={{ backgroundColor: "#141a1f" }}>Not Sure Yet</option>
                   </select>
                 </div>
